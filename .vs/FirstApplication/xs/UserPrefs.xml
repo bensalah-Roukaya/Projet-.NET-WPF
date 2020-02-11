@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{D9B1E5A1-4F07-4E8C-8477-E6A0A6C430F2}|Default">
+  <MonoDevelop.Ide.ItemProperties.FirstApplication PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FirstApplication/Generation.cs">
+    <Files>
+      <File FileName="FirstApplication/Program.cs" Line="18" Column="23" />
+      <File FileName="FirstApplication/Ville.cs" Line="4" Column="18" />
+      <File FileName="FirstApplication/chemin.cs" Line="12" Column="10" />
+      <File FileName="FirstApplication/Generation.cs" Line="37" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FirstApplication" expanded="True">
+            <Node name="FirstApplication" expanded="True">
+              <Node name="Generation.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
