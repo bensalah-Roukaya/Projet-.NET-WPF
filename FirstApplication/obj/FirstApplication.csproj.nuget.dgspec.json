@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/FirstApplication.csproj": {}
+    "/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/FirstApplication.csproj": {}
   },
   "projects": {
-    "/Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/FirstApplication.csproj": {
+    "/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/FirstApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/FirstApplication.csproj",
+        "projectUniqueName": "/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/FirstApplication.csproj",
         "projectName": "FirstApplication",
-        "projectPath": "/Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/FirstApplication.csproj",
+        "projectPath": "/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/FirstApplication.csproj",
         "packagesPath": "/Users/roukayaibensalah/.nuget/packages/",
-        "outputPath": "/Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/obj/",
+        "outputPath": "/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/roukayaibensalah/.config/NuGet/NuGet.Config"

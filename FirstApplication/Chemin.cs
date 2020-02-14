@@ -1,43 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+
 namespace FirstApplication
 {
-    public class Chemin
+    public class Chemin : IEquatable<Chemin>
     {
+        public double Score { get; set; }
+        public List<Ville> Villes { get; set; }
 
-        private List<Ville> villes;
-        private double score;
-
-
-        public Chemin(List<Ville> Ville)
+        public Chemin(List<Ville> villes)
         {
-            this.villes = Ville;
+            this.Villes = villes;
+            this.Score = CalculateScore();
+
         }
-
-
-        public double getScore()
+        //Calculer le score
+        private double CalculateScore()
         {
-            int nbVilles = villes.Count;
+            int nbVilles = Villes.Count;
             double score = 0;
             for (int i = 0; i < nbVilles - 1; i++)
             {
-                Ville ville1 = villes[i];
-                Ville ville2 = villes[i + 1];
-                double Xtotal = Math.Abs(ville1.xFunction - ville2.xFunction);
-                double Ytotal = Math.Abs(ville1.yFunction - ville2.yFunction);
+                Ville ville1 = Villes[i];
+                Ville ville2 = Villes[i + 1];
+                double Xtotal = Math.Abs(ville1.X - ville2.X);
+                double Ytotal = Math.Abs(ville1.Y - ville2.Y);
                 double calcul = Math.Sqrt(Math.Pow(Xtotal, 2) + Math.Pow(Ytotal, 2));
                 score += calcul;
-
             }
             return score;
         }
 
-        public List<Ville> GetVilles()
+        // Comparer deux chemins
+        public bool Equals([AllowNull] Chemin other)
         {
-            return villes;
+            return
+               this.Villes.Equals(other.Villes) &&
+               this.Score.Equals(other.Score);
         }
 
+        public override String ToString()
+        {
+            return $"---------------- \n Score:{Score} \n Villes:{String.Join("|", Villes)}";
 
-
+        }
     }
 }

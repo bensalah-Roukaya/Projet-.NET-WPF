@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{788D6C24-5EC3-4A7B-8265-BDE235A32CB4}|Default">
+  <MonoDevelop.Ide.ItemProperties.FirstApplication PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="program.cs">
+    <Files>
+      <File FileName="Ville.cs" Line="19" Column="1" />
+      <File FileName="Chemin.cs" Line="45" Column="21" />
+      <File FileName="Generation.cs" Line="7" Column="28" />
+      <File FileName="program.cs" Line="25" Column="43" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FirstApplication" expanded="True">
+            <Node name="FirstApplication" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+              </Node>
+              <Node name="program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

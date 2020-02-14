@@ -9,3 +9,14 @@
 /Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.AssemblyInfo.cs
 /Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.dll
 /Users/roukayaibensalah/Projects/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.pdb
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.csprojAssemblyReference.cache
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.AssemblyInfoInputs.cache
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.AssemblyInfo.cs
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.dll
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/obj/Debug/netcoreapp3.1/FirstApplication.pdb
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/bin/Debug/netcoreapp3.1/FirstApplication
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/bin/Debug/netcoreapp3.1/FirstApplication.deps.json
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/bin/Debug/netcoreapp3.1/FirstApplication.runtimeconfig.json
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/bin/Debug/netcoreapp3.1/FirstApplication.runtimeconfig.dev.json
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/bin/Debug/netcoreapp3.1/FirstApplication.dll
+/Users/roukayaibensalah/Projects VisualStudio/FirstApplication/FirstApplication/bin/Debug/netcoreapp3.1/FirstApplication.pdb

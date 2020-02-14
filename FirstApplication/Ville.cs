@@ -1,72 +1,31 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
+
 namespace FirstApplication
 {
-    public class Ville
+    public class Ville : IEquatable<Ville>
     {
-        private String nom;
-        private int x;
-        private int y;
+        public String Nom { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
-        public Ville()
-        {}
-        //constructor
-        public Ville (string nom, int x, int y)
-
-         {
-                this.nom = nom;
-                this.x = x;
-                this.y = y; 
-         }
-
-        public String NomVille
+        public Ville(string nom, int x, int y)
         {
-        get
-            {
-               return nom;
-            }
-        set
-            {
-                value = nom;
-            }
+            this.Nom = nom;
+            this.X = x;
+            this.Y = y;
+        }
+        public bool Equals([AllowNull] Ville other)
+        {
+            return
+              this.Nom.Equals(other.Nom) &&
+              this.X.Equals(other.X) &&
+              this.Y.Equals(other.Y);
         }
 
-        public int xFunction
+        public override String ToString()
         {
-            get
-            {
-                return x;
-            }
-            set
-            {
-               value = x;
-            }
+            return $"Nom:{Nom}, X:{X}, Y:{Y}";
         }
-
-        public int yFunction
-        {
-            get
-            {
-                return y;
-            }
-            set
-            {
-                value = y;
-            }
-        }
-
-       
-        public override bool Equals(Object obj)
-        {
-            if ((obj == null) || !this.GetType().Equals(this.GetType()))
-            {
-                return false;
-            }
-            else
-            {
-                Ville ville = (Ville)obj;
-                return (this.nom.Equals(ville.nom) && this.x == ville.x && this.y == ville.y);
-            }
-        }
-        
     }
 }
