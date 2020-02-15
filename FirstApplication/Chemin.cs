@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace FirstApplication
 {
@@ -32,6 +33,11 @@ namespace FirstApplication
             return score;
         }
 
+        public bool ContientDoublons()
+        {
+            return Villes.Count != Villes.Distinct().Count();
+        }
+
         // Comparer deux chemins
         public bool Equals([AllowNull] Chemin other)
         {
@@ -42,7 +48,7 @@ namespace FirstApplication
 
         public override String ToString()
         {
-            return $"---------------- \n Score:{Score} \n Villes:{String.Join("|", Villes)}";
+            return $"---------------- \n Score:{Score} \n Villes:{String.Join("-", Villes)}";
 
         }
     }

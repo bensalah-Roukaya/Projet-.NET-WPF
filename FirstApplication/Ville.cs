@@ -5,9 +5,9 @@ namespace FirstApplication
 {
     public class Ville : IEquatable<Ville>
     {
-        public String Nom { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public String Nom { get; }
+        public int X { get; }
+        public int Y { get; }
 
         public Ville(string nom, int x, int y)
         {
@@ -25,7 +25,7 @@ namespace FirstApplication
 
         public override String ToString()
         {
-            return $"Nom:{Nom}, X:{X}, Y:{Y}";
+            return $"{Nom}";
         }
     }
 }

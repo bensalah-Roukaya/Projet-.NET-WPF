@@ -6,6 +6,8 @@ namespace FirstApplication
 {
     public class Generateur
     {
+        Random rnd = new Random();// mettre le Random en dehors de la fonction
+
         public Generateur()
         {
         }
@@ -47,38 +49,48 @@ namespace FirstApplication
             List<Ville> villesMelangees = new List<Ville>();
             villesMelangees = villes.OrderBy(a => Guid.NewGuid()).ToList();
             return villesMelangees;
-
         }
 
         /*
          * 
          */
-        Random rnd = new Random();// mettre le Random en dehors de la fonction
-        public Chemin genererXOver(List<Chemin> chemins, int pivot, int nombreXover)
+        public List<Chemin> genererXOver(List<Chemin> chemins, int pivot, int coefficient)
         {
-            // ville affiché 2 fois dans le meme chemin(eliminé une)
+            // chemin affiché 2 fois dans --> réxecuter
             // rajouter un test pour que le pivot ne soit pas superieur au nombre de ville de chemin
             // Faut faire une boucle pour faire fonctionnéé le x over plusieurs fois
-            List<Ville> villesXover = new List<Ville>();
+            List<Chemin> resultat = new List<Chemin>();
 
-            int indexChemin1;
-            int indexChemin2;
-            do
+
+            for (int i = 0; i < coefficient * chemins.Count; i++)
             {
-                //choisir deux chemins aléatoirement de la liste
-                indexChemin1 = rnd.Next(chemins.Count);
-                indexChemin2 = rnd.Next(chemins.Count);
+                int indexChemin1;
+                int indexChemin2;
+                Chemin ch;
+
+                do
+                {
+                    List<Ville> villesXover = new List<Ville>();
+                    do
+                    {
+                        //choisir deux chemins aléatoirement de la liste
+                        indexChemin1 = rnd.Next(chemins.Count);
+                        indexChemin2 = rnd.Next(chemins.Count);
+                    }
+                    while (indexChemin1 == indexChemin2);
+                    int tailleVilleXover = chemins[indexChemin1].Villes.Count;
+                    var nPremieresVilles = chemins[indexChemin1].Villes.Take(pivot);
+
+                    var nSecondesVilles = chemins[indexChemin2].Villes.Skip(Math.Max(0, tailleVilleXover - pivot));
+                    villesXover.AddRange(nPremieresVilles);
+                    villesXover.AddRange(nSecondesVilles);
+
+                    ch = new Chemin(villesXover);
+                }
+                while (ch.ContientDoublons());
+                resultat.Add(ch);
             }
-            while (indexChemin1 == indexChemin2);
-
-            int tailleVilleXover = chemins[indexChemin1].Villes.Count;
-            var nPremieresVilles = chemins[indexChemin1].Villes.Take(pivot);
-
-            var nSecondesVilles = chemins[indexChemin2].Villes.Skip(Math.Max(0, tailleVilleXover - pivot));
-            villesXover.AddRange(nPremieresVilles);
-            villesXover.AddRange(nSecondesVilles);
-
-            return new Chemin(villesXover);
+            return resultat;
         }
 
 
@@ -101,15 +113,14 @@ namespace FirstApplication
         }
 
         //Elite function
-        /*
-        public List<Chemin> eliteFunction(List<Chemin> chemins)
-        {
-            foreach (Chemin item in chemins)
-            {
-                double maxScore = Math.Max(Chemin.getScore(), projection(item));
-            }
 
-        }*/
+        public List<Chemin> Elite(List<Chemin> chemins, int nbElite)
+        {
+            List<Chemin> eliteChemin = new List<Chemin>();
+
+
+            return null;
+        }
 
         // fonction factoriel
         private int factoriel(int nombre)
