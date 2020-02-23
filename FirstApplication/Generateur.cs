@@ -54,13 +54,12 @@ namespace FirstApplication
         /*
          * 
          */
-        public List<Chemin> genererXOver(List<Chemin> chemins, int pivot, int coefficient)
+        public List<Chemin> GenererXOver(List<Chemin> chemins, int pivot, int coefficient)
         {
             // chemin affiché 2 fois dans --> réxecuter
             // rajouter un test pour que le pivot ne soit pas superieur au nombre de ville de chemin
             // Faut faire une boucle pour faire fonctionnéé le x over plusieurs fois
             List<Chemin> resultat = new List<Chemin>();
-
 
             for (int i = 0; i < coefficient * chemins.Count; i++)
             {
@@ -92,24 +91,38 @@ namespace FirstApplication
             }
             return resultat;
         }
-
-
         /*
          * Changement de position de deux villes dans une liste (mutation)
          */
-        public List<Ville> Echanger(List<Ville> villes, int indexA, int indexB)
+        public List<Chemin> Echanger(List<Chemin> chemins, int coefficient)
         {
-            List<Ville> newlist = villes.ToList();
-            if (villes.Count > indexB && villes.Count > indexA)
-            {
-                Ville tmp = villes[indexA];
-                villes[indexA] = villes[indexB];
-                villes[indexB] = tmp;
-            }
-            else
-                throw new System.ArgumentException("erreur: au moins un index choisi est superieur au nombre de villes");
+            List<Chemin> newchemins = new List<Chemin>();
 
-            return newlist;
+            for (int i=0; i< chemins.Count;i++)
+            {
+                for(int j = 0; j < coefficient; j++)
+                {
+                    //on calcule les index
+                    int indexA = 0;
+                    int indexB = 0;
+                    do
+                    {
+                        Random rnd = new Random();
+                        indexA = rnd.Next(chemins[i].Villes.Count);
+                        indexB = rnd.Next(chemins[i].Villes.Count);
+                    } while (indexA == indexB);
+
+                    //Pour chaque chemin on permute deux villes
+                    List<Ville> villes = chemins[i].Villes;
+                    Ville tmp = villes[indexA];
+                    villes[indexA] = villes[indexB];
+                    villes[indexB] = tmp;
+                    Chemin chemin = new Chemin(villes);
+                    newchemins.Add(chemin);
+                }
+            }
+            return newchemins;    
+            
         }
 
         //Elite function
