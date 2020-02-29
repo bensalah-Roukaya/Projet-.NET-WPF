@@ -7,7 +7,15 @@ namespace FirstApplication
         static void Main(string[] args)
         {
 
-            Ville ville1 = new Ville("Nice",  642 , 863);
+            int nbChemins = 10;
+            int xoverCoefficient = 7;
+            int xoverPivot = 2;
+            int echangeCoefficient = 8;
+            int eliteCoefficient = 3;
+            List<Chemin> totale = new List<Chemin>();
+            List<Chemin> resultat = new List<Chemin>();
+
+            Ville ville1 = new Ville("Nice", 642, 863);
             Ville ville2 = new Ville("Saint-laurent", 765, 254);
             Ville ville3 = new Ville("Cagnes-sur-mer", 206, 475);
             Ville ville4 = new Ville("Biot", 874, 452);
@@ -34,22 +42,34 @@ namespace FirstApplication
             villes.Add(ville10);
 
 
-            Generateur g1 = new Generateur();
+            Generateur generateur = new Generateur();
             //Generer 10 chemins
-            List<Chemin> chemins = g1.GenererChemins(10, villes);
+            List<Chemin> chemins = generateur.GenererChemins(nbChemins, villes);
             Console.WriteLine("***** Chemins générés***** ");
             Console.WriteLine(String.Join("\n \n", chemins));
 
             //Mutation
-            List<Chemin>cheminsModifies = g1.Echanger(chemins, 2);
+            List<Chemin> cheminsModifies = generateur.Echanger(chemins, echangeCoefficient);
             Console.WriteLine("\n \n *****liste des chemins modifiés*****");
             Console.WriteLine(String.Join("\n", cheminsModifies));
+            totale.AddRange(cheminsModifies);
 
             //xover
-            List<Chemin> cheminsXover = g1.GenererXOver(chemins, 2, 2);
+            List<Chemin> cheminsXover = generateur.GenererXOver(chemins, xoverPivot, xoverCoefficient);
             Console.WriteLine("\n \n *****Chemins générés par le xover*****");
             Console.WriteLine(String.Join("\n", cheminsXover));
+            totale.AddRange(cheminsXover);
 
+            //elite
+            List<Chemin> cheminsElite = generateur.Elite(chemins, eliteCoefficient);
+            Console.WriteLine("\n \n *****Chemins générés par le Elite");
+            Console.WriteLine(String.Join("\n", cheminsElite));
+            totale.AddRange(cheminsElite);
+
+            //resultat
+            resultat = generateur.Elite(totale, nbChemins);
+            Console.WriteLine("\n \n *****Resultat");
+            Console.WriteLine(String.Join("\n", resultat));
 
         }
     }

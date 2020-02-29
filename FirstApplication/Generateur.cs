@@ -80,7 +80,7 @@ namespace FirstApplication
                     int tailleVilleXover = chemins[indexChemin1].Villes.Count;
                     var nPremieresVilles = chemins[indexChemin1].Villes.Take(pivot);
 
-                    var nSecondesVilles = chemins[indexChemin2].Villes.Skip(Math.Max(0, tailleVilleXover - pivot));
+                    var nSecondesVilles = chemins[indexChemin2].Villes.Skip(pivot);
                     villesXover.AddRange(nPremieresVilles);
                     villesXover.AddRange(nSecondesVilles);
 
@@ -98,9 +98,9 @@ namespace FirstApplication
         {
             List<Chemin> newchemins = new List<Chemin>();
 
-            for (int i=0; i< chemins.Count;i++)
+            for (int i = 0; i < chemins.Count; i++)
             {
-                for(int j = 0; j < coefficient; j++)
+                for (int j = 0; j < coefficient; j++)
                 {
                     //on calcule les index
                     int indexA = 0;
@@ -121,18 +121,14 @@ namespace FirstApplication
                     newchemins.Add(chemin);
                 }
             }
-            return newchemins;    
-            
+            return newchemins;
+
         }
 
         //Elite function
-
         public List<Chemin> Elite(List<Chemin> chemins, int nbElite)
         {
-            List<Chemin> eliteChemin = new List<Chemin>();
-
-
-            return null;
+            return chemins.OrderBy(chemin => chemin.Score).Take(nbElite).ToList();
         }
 
         // fonction factoriel
